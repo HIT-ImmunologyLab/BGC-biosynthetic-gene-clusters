@@ -1,0 +1,7 @@
+Read：高通量测序平台产生的序列
+Contig：拼接软件基因reads之间的overlap区，拼接获得的序列
+Scaffold：基因组de novo测序，通过read是拼接获得Contigs后，往往还需要构建454 Paired-end库或者Illunima Mate-pair库，以获得一定大小片段(如3Kb，6Kb，10Kb，20Kb)两端的序列。基于这些序列，可以确定一些Contig之间的顺序关系，这些先后顺序已知的Contigs组成Scaffold
+Contig N50：Reads拼接后会得到一些不同长度的Contig。将所有Contig长度相加，可获得一个Contig总长。然后将Contigs按照从长到短进行排序，当相加长度达到Contig总长的一半时，最后一个加上的Contig长度即位Contig N50。Contig N50可作为基因组拼接的结果好坏的一个判断标准。
+Scaffold N50：Contigs拼接后会得到一些不同长度的Scaffolds。将所有Scaffold长度相加，可获得一个Scaffold总长。然后将Scaffold按照从长到短进行排序，当相加长度达到Scaffold总长的一半时，最后一个加上的Scaffold长度即位Scaffold N50。Scaffold N50可作为基因组拼接的结果好坏的一个判断标准。
+测序深度：测序得到的总碱基数与带测序基因组大小的比值。假设一个基因大小为2M，获得的总数据量为20M，则测序深度为10X。
+覆盖度：测序获得的序列占整个基因组的比例。由于基因组中的高GC、重复序列等复杂结构的存在，测序最终拼接组装获得的序列往往无法覆盖所有的区域，这部分没有获得的区域被称为Gap。
